@@ -42,6 +42,13 @@
     "text": "4. K-Nearest Neighbour\nKNN is a non‑parametric method (so we do not estimate any coefficients, unlike regression models). For a given test input, it finds the k nearest training inputs and output a prediction that is the most common label among the neighbours. In short, it makes predictions by looking at the k nearest training samples.\nFirst, import KNeighborsClassifier from sklearn.neighbors.\n\n\n\n\n\n\n\n\nThen, define the predictors and response variable. Similarly, conduct a train-test split for model validation purpose. This time, we use a 80:20 split.\n\n\n\n\n\n\n\n\n\n\n\n\n\nIn practice, we choose k based on cross validation. In this example, let’s set it as 5.\n\n\n\n\n\n\n\n\nUse .fit() and .predict() to fit the model and test it on the testing data. Model accuracy can be obtained using accuracy_score()."
   },
   {
+    "objectID": "Scikitlearn.html#return-to-learning-hub-homepage",
+    "href": "Scikitlearn.html#return-to-learning-hub-homepage",
+    "title": "Scikit-learn Tutorial",
+    "section": "Return to Learning Hub Homepage",
+    "text": "Return to Learning Hub Homepage\nLearning Hub Homepage"
+  },
+  {
     "objectID": "Numpy.html",
     "href": "Numpy.html",
     "title": "Numpy Tutorial",
@@ -91,6 +98,13 @@
     "text": "5. Indexing and slicing\nWe can index and slice arrays the same way as in Python lists.\nRecall that in Python, indexing starts from 0. We also index elements by counting backwards and adding a negative sign to the count. To slice a range of elements, use start:stop:step. By default, stop is length of the array and step is 1. Note that stop is exclusive.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMultidimensional arrays can have one index per axis. These indices are given in a tuple separated by commas.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAs an exercise, extract the 3rd column entries in all rows in exercise_4_array (You can use this variable name directly, it has been preloaded) and store it under exercise_8_array."
   },
   {
+    "objectID": "Numpy.html#return-to-learning-hub-homepage",
+    "href": "Numpy.html#return-to-learning-hub-homepage",
+    "title": "Numpy Tutorial",
+    "section": "Return to Learning Hub Homepage",
+    "text": "Return to Learning Hub Homepage\nLearning Hub Homepage"
+  },
+  {
     "objectID": "Pandas.html",
     "href": "Pandas.html",
     "title": "Pandas Tutorial",
@@ -126,6 +140,13 @@
     "text": "3. Correlation\nThe Pandas module also allows us to calculate the relationship between each column in your data set using corr(). By setting numeric_only = True, it ignores all non-numerical columns.\n\nPythonR"
   },
   {
+    "objectID": "Pandas.html#return-to-learning-hub-homepage",
+    "href": "Pandas.html#return-to-learning-hub-homepage",
+    "title": "Pandas Tutorial",
+    "section": "Return to Learning Hub Homepage",
+    "text": "Return to Learning Hub Homepage\nLearning Hub Homepage"
+  },
+  {
     "objectID": "Matplotlib.html",
     "href": "Matplotlib.html",
     "title": "Matplotlib Tutorial",
@@ -152,6 +173,13 @@
     "title": "Matplotlib Tutorial",
     "section": "2. Common plots",
     "text": "2. Common plots\nLet’s use the nhanes data to produce some plots!\n\n2.1 Scatterplot\nSuppose we are interested in the relationship between weight and height, we can produce a scatterplot. First, define the objects to be plotted (x and y). Then, define a figure and axes to make the plot. With axes, apply .scatter() method to create the plot. Lastly, display the plot using .show() method from Matplotlib. .tight_layout() automatically adjusts subplot parameters to prevent labels and titles from being clipped or overlapping, ensuring the entire plot fits within the figure area.\n\n\n\n\n\n\n\n\n\n\n\n\nWe can also modify the setting of the dots in the scatterplot using marker and color. You may refer to https://matplotlib.org/stable/api/markers_api.html for more details about marker type available.\n\n\n\n\n\n\n\n\n\n\n2.2 Barplot\nSuppose we are interested in the mean age by stroke status. First, calculate the stroke level mean age using .groupby() and .mean(). With axes, apply .bar() method to create a bar plot. The first element denotes the group names to be displayed on the x axis, while the second element represents the heights of these bars.\n\n\n\n\n\n\n\n\n\n\n2.3 Lineplot\nAlternatively, we can also create a line plot by apply .plot() method to create a line plot.\n\n\n\n\n\n\n\n\nWe can also modify the setting of the dots in the scatterplot using linestyle and linewidth. You may refer to https://matplotlib.org/stable/gallery/lines_bars_and_markers/linestyles.html for more details about linestyles available.\n\n\n\n\n\n\n\n\n\n\n\n\n\n2.4 Histogram\nSuppose we are interested in the distribution of age. We can use .hist() method to create a histogram. We need to specify the object of which we want to display the distribution and number of bins.\n\n\n\n\n\n\n\n\nWe can also create overlaying plots. Below, we show the distribution of age by gender group. We can set the degree of transparency for each histogram through alpha (1 is solid, 0 is completely transparent). Since we created histograms for each gender group, we have to add a label to each histogram and display the legend for clarity.\n\n\n\n\n\n\n\n\n\n\n2.5 Boxplot\nAside from histogram, we can also show distribution of age using a boxplot with .boxplot(). Here, we need to specify the object of which we want to display the distribution. Optionally, we can also control whether the plot is displayed vertically in vert, the length of whisker in whis (by default 1.5) where the lowest datum is Q1 - whis*(Q3-Q1) and highest datum is Q3 + whis*(Q3-Q1). Note that the middle line is median, we can show the mean with showmeans.\n\n\n\n\n\n\n\n\nWe can also create side-by-side boxplots of age by gender. This can be done by defining the gender specific data, then placing them as a list inside .boxplot() with assigned labels.\n\n\n\n\n\n\n\n\nAlternatively, we can also create separate boxplots (each with their own artists) by defining the axes objects in the plt.subplots(). We can then create boxplot by referencing the the axes index. This is less efficient since we have to set the title and labels for each plot."
+  },
+  {
+    "objectID": "Matplotlib.html#return-to-learning-hub-homepage",
+    "href": "Matplotlib.html#return-to-learning-hub-homepage",
+    "title": "Matplotlib Tutorial",
+    "section": "Return to Learning Hub Homepage",
+    "text": "Return to Learning Hub Homepage\nLearning Hub Homepage"
   },
   {
     "objectID": "index.html",
@@ -194,5 +222,12 @@
     "title": "MCQ Exercises",
     "section": "Matplotlib",
     "text": "Matplotlib\n\nQ1. Which statement correctly describes the relationship between a Figure and an Axes in Matplotlib?\n\n An Axes is the entire window that contains multiple plots A Figure is the overall container; an Axes is the area where data is plotted A Figure and an Axes are the same object Axes objects can exist without being inside a Figure\n\nQ2. Which command correctly creates a 2×2 grid of subplots?\n\n plt.figure(2,2) creates a 2×2 grid of subplots plt.plot() automatically creates a 2×2 layout plt.subplots(2, 2) creates a Figure with a 2×2 grid of Axes You must manually add each Axes using add_axes()\n\nQ3. Which command correctly creates a scatterplot on an Axes object?\n\n ax.line(x, y) plt.scatter(ax, x, y) ax.scatter(x, y) fig.scatter(x, y)\n\nQ4. Which command correctly creates a histogram of Age with 10 bins and visible bin edges?\n\n ax.hist(df[\"Age\"], bins=\"auto\", color=\"none\") ax.hist(df[\"Age\"], bins=10, edgecolor=\"black\") ax.hist(df[\"Age\"], breaks=10) ax.histogram(df[\"Age\"], bins=10)\n\nQ5. Which statement correctly describes the components of a Matplotlib boxplot?\n\n The box shows the mean and standard deviation The box spans Q1 to Q3, with a line at the median The whiskers always extend to the minimum and maximum values Boxplots cannot display means"
+  },
+  {
+    "objectID": "Exercise.html#return-to-learning-hub-homepage",
+    "href": "Exercise.html#return-to-learning-hub-homepage",
+    "title": "MCQ Exercises",
+    "section": "Return to Learning Hub Homepage",
+    "text": "Return to Learning Hub Homepage\nLearning Hub Homepage"
   }
 ]
