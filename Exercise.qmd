@@ -1,0 +1,324 @@
+---
+title: "MCQ Exercises"
+author: Amanda Ng
+format: 
+  html:
+    css: [webex.css]
+    include-after-body: [webex.js]
+    embed-resources: true 
+---
+
+```{r, echo = FALSE, results='asis'}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(webexercises)
+```
+
+## Numpy 
+
+::: {.webex-check .webex-box}
+
+```{r, results='asis'}
+opts <- c(
+  "`np.array([1, 2, 3, 4, 5, 6], shape=(2,3))`",
+  answer = "`np.array([[1, 2, 3], [4, 5, 6]])`",
+  "`np.array((1, 2, 3), (4, 5, 6))`",
+  "`np.array([[1, 2], [3, 4], [5, 6]])`"
+)
+
+cat("Q1. Which of the following correctly creates a 2×3 NumPy array?", longmcq(opts))
+```
+
+```{r, results='asis'}
+opts <- c(
+  "An array of integers from 0 to 10",
+  answer = "An array of 5 evenly spaced values from 0 to 10",
+  "An array of values from 0 to 10 with step size 5",
+  "An array of 10 evenly spaced values from 0 to 5"
+)
+
+cat("Q2. What does `np.linspace(0, 10, 5)` produce?", longmcq(opts))
+```
+
+```{r, results='asis'}
+opts <- c(
+  "(3, 2)",
+  answer = "(2, 3)",
+  "(6,)",
+  "(1, 6)"
+)
+
+cat("Q3. If `x = np.array([[1,2,3],[4,5,6]])`, what is `x.shape`?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "2",
+  answer = "2.5",
+  "[2.5]",
+  "It raises an error"
+)
+
+cat("Q4. Given `a = np.array([1,2,3,4])`, what does `a.mean()` return?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  answer = "np.sqrt()",
+  "np.square()",
+  "np.exp()",
+  "np.root()"
+)
+
+cat("Q5. Which NumPy function computes the square root of every element in an array?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "Converts it into a 3×2 array",
+  answer = "Flattens it into a 1D array of length 6",
+  "Creates a copy with reversed rows",
+  "Raises an error"
+)
+
+cat("Q6. What does `x.reshape(6,)` do to a 2×3 array?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "Both return views of the original array",
+  "Both return copies of the original array",
+  answer = "`flatten()` returns a copy; `ravel()` returns a view",
+  "`flatten()` returns a view; `ravel()` returns a copy"
+)
+
+cat("Q7. Which statement about `flatten()` and `ravel()` is correct?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "[10, 40]",
+  answer = "[20, 50]",
+  "[30, 60]",
+  "[[20], [50]]"
+)
+
+cat("Q8. Given `x = np.array([[10,20,30],[40,50,60]])`, what does `x[:,1]` return?", longmcq(opts))
+```
+
+:::
+
+## Pandas 
+
+::: {.webex-check .webex-box}
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "A Series must contain only numeric values",
+  answer = "A Series represents a single column of data",
+  "A Series is always two‑dimensional",
+  "A Series can only be created from a dictionary"
+)
+
+cat("Q1. Which statement correctly describes a Pandas Series?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "`df.head(10)`",
+  "`df.show(5)`",
+  answer = "`df.tail(5)`",
+  "`df.last(5)`"
+)
+
+cat("Q2. Which command displays the last 5 rows of a DataFrame `df`?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "`df.remove_na()`",
+  answer = "`df.dropna()`",
+  "`df.delete_na()`",
+  "`df.clean()`"
+)
+
+cat("Q3. Which function removes all rows containing at least one NA value?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "`df(Age, Gender)`",
+  "`df.select([\"Age\",\"Gender\"])`",
+  answer = "`df[[\"Age\",\"Gender\"]]`",
+  "`df[\"Age\",\"Gender\"]`"
+)
+
+cat("Q4. Which command correctly extracts the columns 'Age' and 'Gender' as a DataFrame?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "`df[df.Age > 40 & df.Heart_attack == \"No\"]`",
+  "`df[(Age > 40) and (Heart_attack == \"No\")]`",
+  answer = "`df[(df[\"Age\"] > 40) & (df[\"Heart_attack\"] == \"No\")]`",
+  "`df.filter(Age > 40 & Heart_attack == \"No\")`"
+)
+
+cat("Q5. Which command correctly filters rows where age is over 40 and has not experienced heart attack?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "`df.age_5_years_later = Age + 5`",
+  "`df[\"age_5_years_later\"] == df[\"Age\"] + 5`",
+  answer = "`df[\"age_5_years_later\"] = df[\"Age\"] + 5`",
+  "`df.new(age_5_years_later = Age + 5)`"
+)
+
+cat("Q6. Which command correctly creates a new column storing age 5 years later?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "`df[\"gender_text\"] = df[\"Gender\"].ifelse(\"Male\",\"Female\")`",
+  "`df[\"gender_text\"] = df[\"Gender\"].where(df[\"Gender\"]==1,\"Male\",\"Female\")`",
+  answer = "`df[\"gender_text\"] = np.where(df[\"Gender\"]==1, \"Male\", \"Female\")`",
+  "`df[\"gender_text\"] = Gender == 1 ? \"Male\" : \"Female\"`"
+)
+
+cat("Q7. Which command correctly assigns 'Male' when Gender==1 and 'Female' otherwise?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "`df.groupby(\"BMI\")[\"Heart_attack\"].mean()`",
+  "`df.group(\"Heart_attack\").BMI.mean()`",
+  answer = "`df.groupby(\"Heart_attack\")[[\"BMI\"]].mean()`",
+  "`df[\"BMI\"].groupby(\"Heart_attack\").summary()`"
+)
+
+cat("Q8. Which command computes mean BMI grouped by Heart_attack status?", longmcq(opts))
+```
+:::
+
+## Scikitlearn 
+
+::: {.webex-check .webex-box}
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "`sklearn.preprocessing`",
+  answer = "`sklearn.linear_model`",
+  "`sklearn.metrics`",
+  "`sklearn.model_selection`"
+)
+
+cat("Q1. From which module do you import `LinearRegression`?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "It accepts text labels directly with no changes",
+  answer = "Binary outcomes must be encoded as 0/1 values",
+  "It requires outcomes to be integers from 1 to 10",
+  "It automatically converts strings to numeric codes"
+)
+
+cat("Q2. Which statement about preparing the outcome for logistic regression is correct?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "It trains the model on the entire dataset",
+  "It always uses a 50:50 split",
+  answer = "It separates data into training and testing sets for model evaluation",
+  "It only works for classification models"
+)
+
+cat("Q3. What is the purpose of `train_test_split()`?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "Both methods eliminate predictors completely",
+  answer = "LASSO can shrink some coefficients to zero, while Ridge generally does not",
+  "Ridge always performs better than LASSO",
+  "LASSO and Ridge produce identical models"
+)
+
+cat("Q4. Which statement correctly compares LASSO and Ridge regression?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "KNN estimates coefficients like linear regression",
+  "KNN requires predictors to be categorical",
+  answer = "KNN predicts based on the labels of the k closest training samples",
+  "KNN cannot be used for classification"
+)
+
+cat("Q5. Which statement correctly describes how KNN makes predictions?", longmcq(opts))
+```
+:::
+
+## Matplotlib 
+::: {.webex-check .webex-box}
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "An Axes is the entire window that contains multiple plots",
+  answer = "A Figure is the overall container; an Axes is the area where data is plotted",
+  "A Figure and an Axes are the same object",
+  "Axes objects can exist without being inside a Figure"
+)
+
+cat("Q1. Which statement correctly describes the relationship between a Figure and an Axes in Matplotlib?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "`plt.figure(2,2)` creates a 2×2 grid of subplots",
+  "`plt.plot()` automatically creates a 2×2 layout",
+  answer = "`plt.subplots(2, 2)` creates a Figure with a 2×2 grid of Axes",
+  "You must manually add each Axes using `add_axes()`"
+)
+
+cat("Q2. Which command correctly creates a 2×2 grid of subplots?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "`ax.line(x, y)`",
+  "`plt.scatter(ax, x, y)`",
+  answer = "`ax.scatter(x, y)`",
+  "`fig.scatter(x, y)`"
+)
+
+cat("Q3. Which command correctly creates a scatterplot on an Axes object?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "`ax.hist(df[\"Age\"], bins=\"auto\", color=\"none\")`",
+  answer = "`ax.hist(df[\"Age\"], bins=10, edgecolor=\"black\")`",
+  "`ax.hist(df[\"Age\"], breaks=10)`",
+  "`ax.histogram(df[\"Age\"], bins=10)`"
+)
+
+cat("Q4. Which command correctly creates a histogram of Age with 10 bins and visible bin edges?", longmcq(opts))
+```
+
+```{r, results='asis', echo=FALSE}
+opts <- c(
+  "The box shows the mean and standard deviation",
+  answer = "The box spans Q1 to Q3, with a line at the median",
+  "The whiskers always extend to the minimum and maximum values",
+  "Boxplots cannot display means"
+)
+
+cat("Q5. Which statement correctly describes the components of a Matplotlib boxplot?", longmcq(opts))
+```
+
+:::
+
+## Return to Learning Hub Homepage
+
+[Learning Hub Homepage](https://uoft-hmb-coding.github.io){.btn .btn-primary}
